@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700&display=swap");
+
+:root {
+  font-size: 10px;
+}
+
+$bg-color: #f4f6f9;
+$text-color: #383946;
+$secondary-text-color: #858696;
+$negative-red: #f01d1d;
+$base-blue: #3146ed;
+
+$medium: 800px;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: Manrope;
+  font-size: 1.6rem;
+  list-style: none;
+  text-decoration: none;
+}
+
+body {
+  background: $bg-color;
+  max-width: 768px;
+  margin: 0 auto;
+}
+
+section {
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+section.nav {
+  margin: 1rem 0 1.8rem;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  display: flex;
+
+  li {
+    margin: 5px;
+    a {
+      padding: 10px;
+      border: 1px solid $base-blue;
+      background-color: $base-blue;
+      color: white;
+      &:hover {
+        border: 1px solid $base-blue;
+        color: $base-blue;
+        background: none;
+      }
+    }
+  }
+}
+
+section.nav-breadcrumbs {
+  display: flex;
+  align-items: center;
+
+  + span,
+  a,
+  i {
+    color: $text-color;
+    margin-right: 1rem;
+  }
+
+  .previous {
+    color: $secondary-text-color;
+    opacity: 0.8;
+  }
+  span {
+    font-weight: 600;
+  }
+}
+
+section.main .hero {
+  h1 span {
+    font-size: clamp(3.2rem, 8vw, 5rem);
+    color: $text-color;
+    display: block;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  #text-roll {
+    background-color: $base-blue;
+    background-image: linear-gradient(160deg, $base-blue 0%, #08c1fa 100%);
+    background-size: 100%;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    background-clip: text;
+    -moz-text-fill-color: transparent;
+    transition: transform 0.5s;
+    text-align: center;
+    border: none;
+    outline: none;
+    width: 100%;
+  }
+
+  .text-roll-ani {
+    transform: rotate(-3deg);
+  }
+
+  p {
+    font-size: 1.8rem;
+    margin: 1.1rem 0;
+    color: $text-color;
+    text-align: center;
+    span {
+      font-size: 1.8rem;
+      margin: 1.1rem 0;
+      color: $base-blue;
+    }
+  }
+
+  a {
+    margin: 3rem auto;
+    background-color: $base-blue;
+    color: white;
+    padding: 1.8rem;
+    display: flex;
+    font-size: 1.8rem;
+    font-weight: 600;
+    justify-content: center;
+    border-radius: 0.2rem;
+    align-items: center;
+    position: relative;
+    width: clamp(280px, 95%, 400px);
+    box-shadow: rgba(148, 164, 255, 0.664) 0 5px 1px;
+
+    &:hover {
+      top: 5px;
+      box-shadow: none;
+    }
+
+    span {
+      background-color: #2b3bbf;
+      padding: 0.6rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      right: 1.5rem;
+    }
+  }
+
+  p:last-of-type {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 400;
+    position: relative;
+    bottom: 2rem;
+  }
+}
+
+.error {
+  display: block;
+  flex-direction: column;
+  text-align: center;
+  color: red;
+  background-color: rgb(255, 176, 176);
+  padding: 25px;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+.table {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(128, 128, 128, 0.301);
+  background-color: white;
+  border-radius: 0.2rem;
+}
+
+.table .thead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  opacity: 0.4;
+  font-weight: 500;
+  p {
+    padding: 1.5rem 2rem;
+  }
+}
+
+.table .tbody {
+  display: flex;
+  padding: 1.5rem 2rem;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(128, 128, 128, 0.192);
+  color: $text-color;
+}
+
+.tbody:hover {
+  background-color: rgba(128, 128, 128, 0.137);
+  cursor: pointer;
+}
+
+.table .tbody-coin {
+  p {
+    &:last-child {
+      opacity: 0.6;
+    }
+  }
+}
+
+.table .tbody-info {
+  text-align: right;
+
+  .negative {
+    color: rgb(255, 28, 11);
+  }
+  .positive {
+    color: rgb(22, 161, 57);
+  }
+}
+
+.description {
+  padding: 1.5rem 2rem;
+}
+
+.description .line {
+  background: #d9d9d9;
+  border-radius: 2px;
+  height: 18px;
+  margin: 10px 0;
+  overflow: hidden;
+  position: relative;
+}
+.description .line-1 {
+  width: 100%;
+}
+
+.description .line::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 100%;
+  background-image: linear-gradient(
+    to right,
+    #d9d9d9 0%,
+    rgba(0, 0, 0, 0.05) 20%,
+    #d9d9d9 40%,
+    #d9d9d9 100%
+  );
+  background-repeat: no-repeat;
+  background-size: 450px 400px;
+  animation: shimmer 1s linear infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -450px 0;
+  }
+  100% {
+    background-position: 450px 0;
+  }
+}
+
+// Details.html
+section.details-main {
+  .main-content {
+    margin: 0 auto;
+  }
+
+  .heading {
+    margin: 1rem 0;
+    h1 {
+      font-size: 3rem;
+    }
+  }
+
+  .card-content {
+    border: 1px solid rgba(128, 128, 128, 0.137);
+    padding: 2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    span {
+      font-size: 1.2rem;
+    }
+
+    .trade-position {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      width: fit-content;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+    }
+
+    .value {
+      display: flex;
+      align-items: baseline;
+      margin: 3rem auto 1rem;
+      p {
+        margin-right: 0.5rem;
+
+        &:nth-child(2) {
+          font-size: 3rem;
+        }
+      }
+    }
+
+    .content-trend {
+      display: flex;
+      justify-content: space-around;
+
+      div {
+        padding: 1.5rem;
+        margin: 1rem;
+        p {
+          &:nth-child(1) {
+            font-size: 1.2rem;
+          }
+          &:nth-child(2) {
+            font-weight: 600;
+          }
+        }
+      }
+
+      .positive {
+        color: rgb(4, 129, 56);
+        font-size: 3rem;
+        background-color: rgba(4, 129, 56, 0.05);
+        padding: 2rem;
+      }
+
+      .negative {
+        color: rgb(194, 17, 17);
+        font-size: 3rem;
+        background-color: rgba(194, 17, 17, 0.05);
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+//Form page:
+.form-container {
+  background-color: rgb(251, 251, 251);
+  max-width: 700px;
+  margin: 40px auto;
+  border-radius: 5px;
+  padding: 30px;
+  position: relative;
+}
+
+form .form-section {
+  margin: 10px;
+  display: block;
+}
+
+form input {
+  margin-top: 2px;
+  padding: 10px;
+  width: 100%;
+}
+
+form .form-error {
+  display: none;
+  font-size: 12px;
+  padding-top: 5px;
+  padding-left: 5px;
+  color: rgb(255, 12, 60);
+}
+
+form button {
+  padding: 15px 30px;
+  margin-top: 20px;
+  background-color: $base-blue;
+  border: none;
+  font-size: 18px;
+  box-shadow: rgba(148, 164, 255, 0.664) 0 5px 1px;
+  border-radius: 2px;
+  color: rgb(234, 241, 255);
+  cursor: pointer;
+}
+
+form button:hover {
+  position: relative;
+  box-shadow: none;
+  top: 5px;
+  transition: 0s ease;
+}
+
+form button:focus {
+  border: none;
+  outline: none;
+}
+
+form button:active {
+  border: none;
+  outline: none;
+}
+
+label span {
+  font-size: 14px;
+  color: rgb(61, 61, 61);
+}
+
+.form-container p {
+  font-size: 24px;
+  display: flex;
+}
+
+label input:focus {
+  background-color: rgba(255, 187, 0, 0.1);
+}
+
+form textarea {
+  margin-top: 2px;
+  padding: 10px;
+  width: 100%;
+}
+
+.formValidation {
+  display: none;
+  position: relative;
+  bottom: 10px;
+  right: 10px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: left;
+  margin-bottom: 0;
+  background-color: rgba(159, 255, 209, 0.6);
+  width: fit-content;
+  margin: 10px;
+  backdrop-filter: blur(10px);
+}
+
+.formValidation p {
+  font-size: 14px;
+}
+
+.formValidation span {
+  margin-left: 8px;
+}
